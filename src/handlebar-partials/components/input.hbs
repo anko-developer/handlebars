@@ -1,0 +1,19 @@
+<div class="field">
+    <div class="control{{has-error}}" style="max-width: 180rem;">
+        <input class="input" />
+        {{#unless button-class}}
+        {{#if icon-name}}
+        <svg class="icon{{icon-class}} is-right is-blue">
+            <use href="#icon-{{icon-name}}"></use>
+        </svg>
+        {{/if}}
+        {{/unless}}
+        {{#if button-class}}
+        <button class="button{{button-class}} is-square is-outline is-secondary">
+            <svg class="icon{{icon-class}} is-blue">
+                <use href="#icon-{{icon-name}}"></use>
+            </svg>
+        </button>
+        {{/if}}
+    </div>
+</div>

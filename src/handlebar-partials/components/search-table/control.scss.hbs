@@ -1,0 +1,14 @@
+.control {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 26rem;
+
+    // Pseudo
+    &:not(:last-child) {
+        &:not(.is-last) {
+            margin-right: 5rem;
+        }
+    }
+}

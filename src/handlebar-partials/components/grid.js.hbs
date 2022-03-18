@@ -1,0 +1,173 @@
+<script>
+    Ustra.gridColumns = [];
+    Ustra.gridData = [];
+    Ustra.gridOptions = [];
+    Ustra.gridWraps = document.querySelectorAll(".tui-grid-wrap");
+
+    Ustra.gridColumns[0] = [
+        {
+            header: "처리상태",
+            name: "handlingStatus",
+            width: 90,
+            align: "center"
+        },
+        {
+            header: "결재상태",
+            name: "approvalStatus",
+            width: 90,
+            align: "center"
+        },
+        {
+            header: "송장유형",
+            name: "invoiceType",
+            width: 90,
+            align: "center"
+        },
+        {
+            header: "세금계산서일자",
+            name: "taxInvoiceDate",
+            width: 100,
+            align: "center"
+        },
+        {
+            header: "거래처",
+            name: "customer",
+            width: 150
+        },
+        {
+            header: "송장금액",
+            name: "invoiceAmount",
+            width: 100,
+            align: "right",
+            formatter: function (data) {
+                return data.value.toLocaleString();
+            }
+        },
+        {
+            header: "항목합계",
+            name: "sum",
+            width: 100,
+            align: "right",
+            formatter: function (data) {
+                return data.value.toLocaleString();
+            }
+        },
+        {
+            header: "세금합계",
+            name: "taxSum",
+            width: 100,
+            align: "right",
+            formatter: function (data) {
+                return data.value.toLocaleString();
+            }
+        },
+        {
+            header: "송장번호",
+            name: "invoiceNum",
+            width: 130
+        },
+        {
+            header: "송장상태",
+            name: "invoiceStatus",
+            width: 70,
+            align: "center"
+        },
+        {
+            header: "지급일자",
+            name: "providedDate",
+            width: 90,
+            align: "center"
+        },
+        {
+            header: "법인카드 사용",
+            name: "companyCreditCard",
+            width: 80,
+            align: "center",
+            formatter: function (data) {
+                if (data.value) {
+                    return "Y";
+                } else {
+                    return "N";
+                }
+            }
+        },
+        {
+            header: "적요",
+            name: "summary"
+        },
+        {
+            header: "부채계정(대변)",
+            name: "id",
+            width: 165
+        }
+    ];
+
+    Ustra.gridData[0] = [];
+    for (let i = 0; i < 50; i++) {
+        Ustra.gridData[0].push({
+            handlingStatus: "송장완료",
+            approvalStatus: "대기",
+            invoiceType: "표준",
+            taxInvoiceDate: "2021-01-01",
+            customer: "서울시 종로구청",
+            invoiceAmount: 20000000,
+            sum: 20000000,
+            taxSum: "0",
+            invoiceNum: "123456-홍길동-001",
+            invoiceStatus: "검증",
+            providedDate: "2021-01-01",
+            companyCreditCard: false,
+            summary: "2021년도 북항재개발사업구역 내",
+            id: "10.123456789.111"
+        })
+    }
+
+    Ustra.gridOptions[0] = {
+        el: Ustra.gridWraps[0], // Container element
+        rowHeaders: [
+            {
+                type: "checkbox"
+            }
+        ],
+        columns: Ustra.gridColumns[0],
+        data: Ustra.gridData[0],
+        columnOptions: {
+            resizable: true
+        },
+        header: {
+            height: 32
+        },
+        minRowHeight: 25,
+        rowHeight: 32,
+        minBodyHeight: 100,
+        bodyHeight: "fitToParent",
+        scrollX: false,
+        summary: {
+            height: 32,
+            position: "bottom",
+            columnContent: {
+                handlingStatus: {
+                    template: function () {
+                        return "합계";
+                    }
+                },
+                invoiceAmount: {
+                    template: function (valueMap) {
+                        return valueMap.sum.toLocaleString();
+                    }
+                },
+                sum: {
+                    template: function (valueMap) {
+                        return valueMap.sum.toLocaleString();
+                    }
+                },
+                taxSum: {
+                    template: function (valueMap) {
+                        return valueMap.sum.toLocaleString();
+                    }
+                }
+            }
+        },
+        editingEvent: "click"
+    };
+</script>

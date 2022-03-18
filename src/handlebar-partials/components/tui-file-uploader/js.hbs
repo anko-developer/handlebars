@@ -1,0 +1,34 @@
+const uploader = new Ustra.FileUploader($("#uploader"), {
+    url: {
+        send: "http://localhost:3000/upload"
+    },
+    isMultiple: true,
+    isBatchTransfer: true,
+    listUI: {
+        type: "table",
+        columnList: [
+            {
+                header: "\{{checkbox}}",
+                body: "\{{checkbox}}",
+                width: 45
+            },
+            {
+                header: "파일명",
+                body: '<span class="tui-filename-area"><span class="tui-file-name" style="max-width: 333rem;">\{{filename}}</span></span>',
+                width: 333
+            },
+            {
+                header: "파일크기",
+                body: "\{{filesize}}",
+                width: 100
+            }
+        ]
+    }
+});
+
+const $removeButton = $(".button.remove-file");
+$removeButton.on("click", function () {
+    const checkedItems = uploader.getCheckedList();
+
+    uploader.removeList(checkedItems);
+});

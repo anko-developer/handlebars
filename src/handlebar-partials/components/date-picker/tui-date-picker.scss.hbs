@@ -1,0 +1,195 @@
+.tui-datepicker-input {
+    border: none;
+    width: 100%;
+    height: 26px;
+    background-color: white;
+    vertical-align: middle;
+
+    input {
+        padding: 0 5rem;
+        border: 1rem solid #dbdbdb;
+        background-color: #fff;
+
+        &:hover,
+        &:focus {
+            + .tui-ico-date {
+                // icon-calendar
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(-2 -2)'%3E%3Crect width='24' height='24' transform='translate(2 2)' fill='none'/%3E%3Cpath d='M13.889,9.556H10v3.889h3.889ZM13.111,1V2.556H6.889V1H5.333V2.556H4.556A1.548,1.548,0,0,0,3.008,4.111L3,15a1.555,1.555,0,0,0,1.556,1.556H15.444A1.56,1.56,0,0,0,17,15V4.111a1.56,1.56,0,0,0-1.556-1.556h-.778V1Zm2.333,14H4.556V6.444H15.444Z' transform='translate(4 5)' fill='%238e8e8e'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+
+        &:read-only {
+            border-color: #dbdbdb;
+            color: #151515;
+            background-color: #ededed;
+
+            + .tui-ico-date {
+                opacity: 0.4;
+                // icon-calendar
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(-2 -2)'%3E%3Crect width='24' height='24' transform='translate(2 2)' fill='none'/%3E%3Cpath d='M13.889,9.556H10v3.889h3.889ZM13.111,1V2.556H6.889V1H5.333V2.556H4.556A1.548,1.548,0,0,0,3.008,4.111L3,15a1.555,1.555,0,0,0,1.556,1.556H15.444A1.56,1.56,0,0,0,17,15V4.111a1.56,1.56,0,0,0-1.556-1.556h-.778V1Zm2.333,14H4.556V6.444H15.444Z' transform='translate(4 5)' fill='%238e8e8e'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+
+        fieldset[disabled] &,
+        &[disabled] {
+            border-color: #dbdbdb;
+            color: #bebebe;
+            background-color: #ebebeb;
+
+            + .tui-ico-date {
+                opacity: 0.4;
+                // icon-calendar
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(-2 -2)'%3E%3Crect width='24' height='24' transform='translate(2 2)' fill='none'/%3E%3Cpath d='M13.889,9.556H10v3.889h3.889ZM13.111,1V2.556H6.889V1H5.333V2.556H4.556A1.548,1.548,0,0,0,3.008,4.111L3,15a1.555,1.555,0,0,0,1.556,1.556H15.444A1.56,1.56,0,0,0,17,15V4.111a1.56,1.56,0,0,0-1.556-1.556h-.778V1Zm2.333,14H4.556V6.444H15.444Z' transform='translate(4 5)' fill='%238e8e8e'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    .tui-ico-date {
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+        // icon-calendar
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(-2 -2)'%3E%3Crect width='24' height='24' transform='translate(2 2)' fill='none'/%3E%3Cpath d='M13.889,9.556H10v3.889h3.889ZM13.111,1V2.556H6.889V1H5.333V2.556H4.556A1.548,1.548,0,0,0,3.008,4.111L3,15a1.555,1.555,0,0,0,1.556,1.556H15.444A1.56,1.56,0,0,0,17,15V4.111a1.56,1.56,0,0,0-1.556-1.556h-.778V1Zm2.333,14H4.556V6.444H15.444Z' transform='translate(4 5)' fill='%238e8e8e'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 0 0 !important;
+    }
+
+    &:hover {
+        .tui-ico-date {
+            // icon-calendar
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(-2 -2)'%3E%3Crect width='24' height='24' transform='translate(2 2)' fill='none'/%3E%3Cpath d='M13.889,9.556H10v3.889h3.889ZM13.111,1V2.556H6.889V1H5.333V2.556H4.556A1.548,1.548,0,0,0,3.008,4.111L3,15a1.555,1.555,0,0,0,1.556,1.556H15.444A1.56,1.56,0,0,0,17,15V4.111a1.56,1.56,0,0,0-1.556-1.556h-.778V1Zm2.333,14H4.556V6.444H15.444Z' transform='translate(4 5)' fill='%238e8e8e'/%3E%3C/g%3E%3C/svg%3E");
+        }
+    }
+}
+
+.tui-datepicker {
+    top: 27px;
+    left: 0;
+    z-index: 20;
+    border-color: #585858;
+
+    .tui-calendar-header {
+        border-bottom: 0;
+    }
+
+    .tui-calendar-header-inner {
+        height: auto;
+        padding: 12px 0 17px;
+    }
+
+    .tui-calendar-btn {
+        top: 7px;
+        width: 28px;
+        height: 28px;
+
+        &::after {
+            top: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            background-position: 0;
+        }
+
+        &:first-child {
+            left: 14px;
+
+            &::after {
+                // icon-large-chevron is-left
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate(-782 -315)'%3E%3Crect width='28' height='28' transform='translate(782 315)' fill='none'/%3E%3Cpath d='M945.942,133.07l4.207,4.207-4.207,4.207' transform='translate(1744.752 465.88) rotate(180)' fill='none' stroke='%238e8e8e' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+
+        &:last-child {
+            right: 14px;
+
+            &::after {
+                // icon-large-chevron is-right
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg transform='translate(-782 -315)'%3E%3Crect width='28' height='28' transform='translate(782 315)' fill='none'/%3E%3Cpath d='M945.942,133.07l4.207,4.207-4.207,4.207' transform='translate(1744.752 465.88) rotate(180)' fill='none' stroke='%238e8e8e' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .tui-calendar-btn-prev-month {
+        &::after {
+            left: 0;
+        }
+    }
+
+    .tui-calendar-btn-next-month {
+        &::after {
+            right: 0;
+        }
+    }
+
+    .tui-calendar-title {
+        font-weight: bold;
+        font-size: 16px;
+        color: #151515;
+    }
+
+    .tui-calendar-body-header {
+        th {
+            height: 32px;
+            font-size: 12px;
+            color: #151515;
+
+            &.tui-sun {
+                color: #c01e14;
+            }
+
+            &.tui-sat {
+                color: #4484d9;
+            }
+        }
+    }
+
+    .tui-calendar-date {
+        height: 40px !important;
+        border-radius: 3px;
+        border: 0 !important;
+        font-weight: bold;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #f0f3f9 !important;
+        }
+
+        .tui-is-selectable {
+            color: #000;
+        }
+
+        &.tui-calendar-sun {
+            color: #c01e14;
+        }
+
+        &.tui-calendar-sat {
+            color: #4484d9;
+        }
+
+        &.tui-calendar-today {
+            color: #1f61b9;
+            background-color: #f7f8f9 !important;
+        }
+
+        &.tui-is-selected {
+            color: #fff;
+            background-color: #1f61b9 !important;
+        }
+
+        &.tui-calendar-next-month {
+            display: none;
+        }
+    }
+}
+
+.tilde {
+    &:not(:last-child) {
+        &:not(.is-last) {
+            margin: 0 4px 0 1px;
+        }
+    }
+}

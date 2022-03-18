@@ -1,0 +1,36 @@
+.toast {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 41;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3rem;
+    background-color: #1b2d4b;
+
+    &.is-active {
+        animation: toast 2s 2 alternate;
+    }
+}
+
+.toast-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9rem 0;
+    font-weight: 700;
+    font-size: 12rem;
+    line-height: 14rem;
+    color: #fff;
+}
+
+@keyframes toast {
+    from {
+        visibility: visible;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

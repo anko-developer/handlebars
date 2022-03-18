@@ -1,0 +1,34 @@
+.icon {
+    &.is-x {
+        // Modifiers - Sizes
+        width: 10rem;
+        height: 10rem;
+
+        &.is-large {
+            width: 15rem;
+            height: 15rem;
+
+            &:not(:last-child) {
+                &:not(.is-last) {
+                    margin: 2rem;
+                }
+            }
+        }
+
+        // Modifiers - Colors
+        &.is-dark-gray {
+            stroke: #999;
+        }
+    }
+
+    &.is-exclamation-circle {
+        width: 35rem;
+        height: 35rem;
+
+        &:not(:last-child) {
+            &:not(.is-last) {
+                margin-right: 4rem;
+            }
+        }
+    }
+}

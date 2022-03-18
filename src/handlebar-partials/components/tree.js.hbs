@@ -1,0 +1,76 @@
+<script>
+    Ustra.treeData = [];
+    for (let i = 0; i < 2; i++) {
+        Ustra.treeData[i] = [
+            {
+                text: "부사장",
+                children: [
+                    {
+                        text: "전략기획본부",
+                        children: [
+                            {
+                                text: "전략기획실",
+                                children: [
+                                    {
+                                        text: "홍보팀"
+                                    },
+                                    {
+                                        text: "인사지원팀"
+                                    },
+                                    {
+                                        text: "사업추진팀"
+                                    }
+                                ]
+                            },
+                            {
+                                text: "전략사업실",
+                                state: "closed",
+                                children: [
+                                    {
+                                        text: "sub"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        text: "경영관리본부",
+                        state: "closed",
+                        children: [
+                            {
+                                text: "sub"
+                            }
+                        ]
+                    },
+                    {
+                        text: "사업수행본부",
+                        state: "closed",
+                        children: [
+                            {
+                                text: "sub"
+                            }
+                        ]
+                    },
+                    {
+                        text: "경영지원부문"
+                    },
+                    {
+                        text: "사외이사"
+                    },
+                    {
+                        text: "경영진단실",
+                        state: "closed",
+                        children: [
+                            {
+                                text: "sub"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                text: "상임이사"
+            }
+        ];
+    }
+</script>

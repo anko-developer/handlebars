@@ -1,0 +1,156 @@
+@mixin sr-only {
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1rem !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    white-space: nowrap !important;
+}
+
+@mixin check-radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+        @include sr-only;
+
+        // Pseudo
+        &:checked {
+            ~ .input-button {
+                border-color: #1f61b9;
+            }
+        }
+
+        &[readonly] {
+            ~ .input-button {
+                border-color: #666;
+            }
+        }
+
+        fieldset[disabled] &,
+        &[disabled] {
+            ~ .input-button {
+                border-color: #dbdbdb;
+            }
+
+            ~ .input-label {
+                color: #dbdbdb;
+                cursor: not-allowed;
+            }
+            
+            &:not(:checked) {
+                ~ .input-button {
+                    background-color: #ededed;
+                }
+            }
+        }
+    }
+
+    .input-button {
+        position: relative;
+        border: 1rem solid #bebebe;
+        width: 14rem;
+        height: 14rem;
+        background-color: white;
+
+        &:not(:last-child) {
+            &:not(.is-last) {
+                margin-right: 6rem;
+            }
+        }
+    }
+
+    // Pseudo
+    &:hover,
+    &.is-hover {
+        .input-button {
+            border-color: #1f61b9;
+        }
+    }
+
+    // Pseudo
+    &:focus,
+    &.is-focus,
+    &.is-active {
+        .input-button {
+            border-color: #1f61b9;
+        }
+    }
+}
+
+// Block
+.checkbox {
+    @include check-radio;
+
+    // Element
+    input {
+        // Pseudo
+        &:checked {
+            // Mixes
+            ~ .input-button {
+                background-color: #1f61b9;
+                // icon-check
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cg transform='translate(-32 8)'%3E%3Crect width='10' height='10' transform='translate(32 -8)' fill='none'/%3E%3Cpath d='M391.378,239.421l2.538,2.538,4.29-4.29' transform='translate(-357.879 -243.169)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            ~ .icon {
+                fill: #1f61b9;
+            }
+        }
+
+        &:hover,
+        &.is-hover {
+            // Mixes
+            ~ .icon {
+                fill: #759ed5;
+            }
+        }
+
+        &:focus,
+        &.is-focus {
+            // Mixes
+            ~ .input-button {
+                border-color: #1f61b9;
+            }
+        }
+
+        &[readonly] {
+            // Pseudo
+            &:checked {
+                // Mixes
+                ~ .input-button {
+                    background-color: #666;
+                }
+            }
+        }
+
+        fieldset[disabled] &,
+        &[disabled] {
+            // Mixes
+            ~ .input-button {
+                background-color: #f1f1f1;
+            }
+
+            ~ .icon {
+                fill: #ededed;
+            }
+        }
+    }
+
+    // Element
+    .input-button {
+        border-radius: 2rem;
+    }
+
+    &.is-setting {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

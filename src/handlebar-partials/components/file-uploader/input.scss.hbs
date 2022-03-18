@@ -1,0 +1,59 @@
+@mixin input {
+    border: 1rem solid #dbdbdb;
+    width: 100%;
+
+    // Pseudo
+    &:hover,
+    &.is-hover,
+    &:focus,
+    &.is-focus,
+    &.is-active {
+        // Pseudo
+        &:not([readonly]),
+        &:not([disabled]) {
+            border-color: #1f61b9;
+        }
+    }
+
+    &[readonly],
+    fieldset[disabled] &,
+    &[disabled] {
+        background-color: #ededed;
+    }
+
+    // Modifier - Color
+    &.is-transparent {
+        border: none;
+        background-color: transparent !important;
+    }
+}
+
+@mixin sr-only {
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    margin: -1rem !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    white-space: nowrap !important;
+}
+
+.input {
+    @include input;
+    padding: 0 5rem;
+    height: 100%;
+    font-size: 12rem;
+    line-height: 14rem;
+
+    &.is-highlight {
+        font-weight: 700;
+        text-decoration: underline;
+        color: #c01e14;
+    }
+}
+
+.file-input {
+    @include sr-only;
+}

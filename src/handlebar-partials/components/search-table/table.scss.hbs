@@ -1,0 +1,150 @@
+.table {
+    table-layout: fixed;
+    background-color: transparent;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                text-align: left;
+
+                // Modifiers
+                &:focus,
+                &.is-focus,
+                &.is-active {
+                    a,
+                    strong {
+                        color: currentColor;
+                    }
+                }
+            }
+
+            > th {
+                &.is-algined-right {
+                    padding-right: 15rem !important;
+                    text-align: right !important;
+                }
+            }
+
+            &:focus,
+            &.is-focus,
+            &.is-active {
+                > th,
+                > td {
+                    border-color: white;
+                    color: currentColor;
+                }
+
+                strong,
+                a {
+                    color: currentColor;
+                }
+            }
+
+            fieldset[disabled] &,
+            &[disabled] {
+                > th,
+                > td {
+                    color: $gray_30;
+                }
+            }
+        }
+    }
+
+    > thead {
+        background-color: $gray_10;
+
+        > tr {
+            > th,
+            > td {
+                color: $gray_60;
+            }
+        }
+    }
+
+    > tbody {
+        background-color: transparent;
+
+        > tr {
+            > th {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    > tfoot {
+        background-color: transparent;
+
+        > tr {
+            > td,
+            > th {
+                border-width: 2rem 0 0;
+                color: $text-strong;
+            }
+        }
+    }
+
+    .field {
+        &:not(:last-child) {
+            &:not(.is-last) {
+                margin-right: 0.4em;
+                margin-bottom: auto;
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        &:not(.is-last) {
+            margin-bottom: 10rem;
+        }
+    }
+
+    &.is-search {
+        border: 1rem solid #c8d0dd;
+        width: 100%;
+        background-color: #dde4f2;
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > th,
+                > td {
+                    padding-top: 4rem;
+                    padding-bottom: 4rem;
+                }
+
+                > th {
+                    padding-left: 28rem;
+                }
+
+                > td {
+                    &:last-child {
+                        &:not(.last-child) {
+                            padding-right: 20rem;
+                            padding-bottom: 11rem;
+                            vertical-align: top;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    > th,
+                    > td {
+                        padding-top: 12rem;
+                    }
+                }
+
+                &:last-child {
+                    > th,
+                    > td {
+                        padding-bottom: 12rem;
+                    }
+                }
+            }
+        }
+    }
+}

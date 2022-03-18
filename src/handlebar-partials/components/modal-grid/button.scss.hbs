@@ -1,0 +1,181 @@
+$colors: (
+    "filled.is-primary": (
+        "border-color": #0354ff,
+        "background-color": #0354ff,
+        "color": white,
+
+        "border-color:hover": #4484d9,
+        "background-color:hover": #4484d9,
+        "color:hover": white,
+
+        "border-color:focus": #003288,
+        "background-color:focus": #003288,
+        "color:focus": white,
+
+        "border-color:active": #003288,
+        "background-color:active": #003288,
+        "color:active": white,
+
+        "border-color:disabled": #e5e5e5,
+        "background-color:disabled": #e5e5e5,
+        "color:disabled": #bebebe
+    ),
+    "outline.is-primary": (
+        "border-color": #1f61b9,
+        "background-color": white,
+        "color": #1f61b9,
+        
+        "border-color:hover": #1f61b9,
+        "background-color:hover": #f0f3f9,
+        "color:hover": #1f61b9,
+        
+        "border-color:focus": #1f61b9,
+        "background-color:focus": #dde4f2,
+        "color:focus": #1f61b9,
+        
+        "border-color:active": #1f61b9,
+        "background-color:active": #f0f3f9,
+        "color:active": #1f61b9,
+        
+        "border-color:disabled": #dbdbdb,
+        "background-color:disabled": white,
+        "color:disabled": #dbdbdb
+    )
+) !default;
+
+.buttons {
+    display: flex;
+    align-items: flex-start;
+
+    // Element
+    .button {
+        // Pseudo
+        &:not(:last-child) {
+            &:not(.is-last) {
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    &.is-center {
+        justify-content: center;
+    }
+}
+
+// Block
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-width: 1rem;
+    border-style: solid;
+    border-radius: 3rem;
+    padding: 0 10rem;
+    min-width: 58rem;
+    height: 26rem;
+    font-size: 12rem;
+    line-height: 14rem;
+    font-weight: 700;
+
+    // Pseudo
+    &:not(:last-child) {
+        &:not(.is-last) {
+            margin-right: 6rem;
+        }
+    }
+
+    &:hover,
+    &.is-hover {
+        // Element
+        .icon {
+            // Modifiers - Shapes
+            &.is-question {
+                fill: #1f61b9;
+            }
+
+            &.is-star {
+                fill: #a7b4cb;
+            }
+        }
+    }
+
+    &:focus,
+    &.is-focus,
+    &.is-active {
+        // Element
+        .icon {
+            // Modifiers - Shapes
+            &.is-question {
+                fill: #003288;
+            }
+
+            &.is-star {
+                fill: #1f61b9;
+            }
+        }
+    }
+
+    fieldset[disabled] &,
+    &[disabled] {
+        // Element
+        .icon {
+            // Modifiers - Shapes
+            &.is-question {
+                fill: #e5e5e5;
+            }
+
+            &.is-star {
+                fill: #ededed;
+            }
+        }
+    }
+
+    &.close-modal {
+        @include is-transparent;
+    }
+
+    &.is-large {
+        min-width: 86rem;
+        height: 28rem;
+    }
+
+    // Modifiers - Colors
+    @each $key, $value in $colors {
+        &.is-#{$key} {
+            border-color: map-get($value, "border-color");
+            background-color: map-get($value, "background-color");
+            color: map-get($value, "color");
+
+            @if length($value) > 3 {
+                // Pseudo
+                &:hover,
+                &.is-hover {
+                    border-color: map-get($value, "border-color:hover");
+                    background-color: map-get($value, "background-color:hover");
+                    color: map-get($value, "color:hover");
+                }
+
+                &:focus,
+                &.is-focus {
+                    border-color: map-get($value, "border-color:focus");
+                    background-color: map-get($value, "background-color:focus");
+                    color: map-get($value, "color:focus");
+                }
+
+                &.is-active {
+                    border-color: map-get($value, "border-color:active");
+                    background-color: map-get($value, "background-color:active");
+                    color: map-get($value, "color:active");
+                }
+
+                fieldset[disabled] &,
+                &[disabled] {
+                    border-color: map-get($value, "border-color:disabled");
+                    background-color: map-get($value, "background-color:disabled");
+                    color: map-get($value, "color:disabled");
+                }
+            }
+        }
+    }
+}

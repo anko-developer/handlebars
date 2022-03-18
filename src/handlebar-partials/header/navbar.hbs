@@ -1,0 +1,142 @@
+<header class="navbar{{#if document}} has-border{{/if}}">
+    <div class="navbar-logo">
+        <div class="navbar-item">
+                <a href="{{path.templates}}/">
+                <span class="icon is-logo">
+                    <svg>
+                        <use href="#icon-logo"></use>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="navbar-menu">
+        <!-- screen reader 때문에 nav 안에 ul을 쓰지 않는다. https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be -->
+        <nav class="navbar-left">
+            <div class="navbar-item{{theme}}">
+                <a href="{{path.templates}}/index.html">
+                    Themes
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a href="https://gsitm-docs.s3.ap-northeast-2.amazonaws.com/download/USTRA_Design_System.pdf"
+                    target="_blank">
+                    StyleGuide
+                </a>
+            </div>
+            <div class="navbar-item{{document}}">
+                <a href="{{path.documentation}}/overview.html">
+                    Documentation
+                </a>
+                <nav class="navbar-sub-menu">
+                    <div class="navbar-sub-item">
+                        <a href="{{path.documentation}}/overview.html">Overview</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="{{path.documentation}}/css-methodology.html">CSS 방법론</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="{{path.documentation}}/code-convention.html">Code Convetion</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="{{path.documentation}}/road-map.html">Road Map</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="{{path.documentation}}/release-note.html">Release Note</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="navbar-item">
+                <a href="#resources">
+                    Resources
+                </a>
+                <nav class="navbar-sub-menu">
+                    <div class="navbar-sub-item">
+                        <a href="https://atlassian.design/" target="_blank">Attlasian</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.audi.com/ci/en/guides/user-interface/introduction.html" target="_blank">AUDI</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.bbc.co.uk/gel/guidelines/category/foundations" target="_blank">BBC</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://bulma.io/" target="_blank">Bulma</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://clarity.design/" target="_blank">Calarity</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.carbondesignsystem.com/" target="_blank">Carbon</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://experience.sap.com/fiori-design-web/" target="_blank">Fiori</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.microsoft.com/design/fluent/" target="_blank">Fluent</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank">Human Interface</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.ibm.com/design/language/" target="_blank">IBM Design Language</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://lightningdesignsystem.com/" target="_blank">Lightning</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://ux.mailchimp.com/" target="_blank">Mailchimp</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://material.io/" target="_blank">Material</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://getmdl.io/" target="_blank">Material Lite</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="http://brand.opentable.com/" target="_blank">Open Table</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://www.patternfly.org/" target="_blank">Patternfly</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://design.firefox.com/photon/" target="_blank">Phonton</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="http://plasma.guide/" target="_blank">Plasma</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://polaris.shopify.com/" target="_blank">Polaris</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://primer.style/" target="_blank">Primer</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://designsystem.quickbooks.com/" target="_blank">Quickbooks</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://semantic-ui.com/" target="_blank">SemanticUI</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://ridi.design/" target="_blank">Ridi</a>
+                    </div>
+                    <div class="navbar-sub-item">
+                        <a href="https://brand.uber.com/" target="_blank">Uber</a>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+        <nav class="navbar-right">
+            <div class="navbar-item">
+                <a href="https://www.gsitm.com/" target="_blank">
+                    <span>Brand</span>
+                    <span class="icon is-arrow-circle">
+                        <svg>
+                            <use href="#icon-arrow-circle"></use>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>

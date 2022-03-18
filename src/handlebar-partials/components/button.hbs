@@ -1,0 +1,10 @@
+<button class="button{{button-class}}">
+    {{#if icon-name}}
+    <svg class="icon is-{{icon-name}}">
+        <use href="#icon-{{icon-name}}"></use>
+    </svg>
+    <span>{{button-name}}</span>
+    {{else}}
+    {{button-name}}
+    {{/if}}
+</button>

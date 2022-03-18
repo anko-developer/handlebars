@@ -1,0 +1,27 @@
+.icon {
+    &.is-x {
+        // Modifiers - Sizes
+        width: 10rem;
+        height: 10rem;
+
+        &.is-large {
+            width: 15rem;
+            height: 15rem;
+
+            &:not(:last-child) {
+                &:not(.is-last) {
+                    margin: 2rem;
+                }
+            }
+        }
+
+        // Modifiers - Colors
+        &.is-gray {
+            stroke: #b0b5be;
+        }
+
+        &.is-dark-gray {
+            stroke: #999;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "documentation": {
+      "documentation": ".",
+      "components": "../components",
+      "templates": "../templates"
+  },
+  "components": {
+      "documentation": "../documentation",
+      "components": ".",
+      "templates": "../templates"
+  },
+  "templates": {
+      "documentation": "../documentation",
+      "components": "../components",
+      "templates": "."
+  }
+}

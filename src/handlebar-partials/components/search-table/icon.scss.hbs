@@ -1,0 +1,19 @@
+.icon {
+    &.is-magnifier {
+        width: 16rem;
+        height: 16rem;
+        stroke: white;
+
+        // Pseudo
+        &:not(:last-child) {
+            &:not(.is-last) {
+                margin-right: 2rem;
+            }
+        }
+
+        // Modifiers - Colors
+        &.is-blue {
+            stroke: #1f61b9;
+        }
+    }
+}
