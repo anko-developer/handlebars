@@ -9,12 +9,16 @@ const { extendDefaultPlugins } = require("svgo");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    publicPath: 'src/',
+    // publicPath: 'http://localhost:9000/',
     filename: 'index.bundle.js'
+  },
+  devServer: {
+    port: 9000,
   },
   module: {
     rules: [
@@ -97,7 +101,7 @@ module.exports = {
       entry: path.join(process.cwd(), "src", "handlebars", "**", "*.hbs"),
       // output path and filename(s). This should lie within the webpacks output-folder
       // if ommited, the input filepath stripped of its extension will be used
-      output: path.join(process.cwd(), "public", "pages", "[name].html"),
+      output: path.join(process.cwd(), "src", "html", "[path]", "[name].html"),
       // you can also add a [path] variable, which will emit the files with their relative path, like
       // output: path.join(process.cwd(), "build", [path], "[name].html"),
 
@@ -107,17 +111,8 @@ module.exports = {
       data: path.join(__dirname, "handlebars.json"),
 
       // globbed path to partials, where folder/filename is unique
-      partials: [path.join(process.cwd(), "src", "handlebar-partials", "**", "*.hbs")],
-
-      // register custom helpers. May be either a function or a glob-pattern
-      helpers: {
-        // nameOfHbsHelper: Function.prototype,
-        // projectHelpers: path.join(process.cwd(), "helpers", "*.helper.js")
-        isActive: function (value) {
-          return value == ".";
-        }
-      }
-  }),
+      partials: [path.join(process.cwd(), "src", "partials", "**", "*.hbs")]
+    })
   ],
   devtool: 'source-map'
 };
